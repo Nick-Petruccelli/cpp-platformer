@@ -2,11 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-void shouldClose(GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, true);
-    }
-}
+void shouldClose(GLFWwindow *window);
 
 int main() {
     glfwInit();
@@ -48,4 +44,10 @@ int main() {
 
     glfwTerminate();
 	return 0;
+}
+
+void shouldClose(GLFWwindow *window) {
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
 }
